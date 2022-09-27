@@ -16,9 +16,6 @@ jobs:
   ios-build:
     name: IOS Production Build
     runs-on: macOS-latest
-    defaults:
-      run:
-        working-directory: ios
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -39,7 +36,7 @@ jobs:
             ${{ runner.os }}-pods-
 
       - name: Install Pods
-        run: pod install --repo-update && cd ..
+        run: cd ios && pod install --repo-update && cd ..
         
       - name: Select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.0.0.app
