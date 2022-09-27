@@ -46,3 +46,6 @@ jobs:
         
       - name: React Native run-ios
         run: npm run ios
+        
+      - name: List folder
+        run: cd ios && ls
