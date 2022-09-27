@@ -48,4 +48,4 @@ jobs:
         run: npm run ios
         
       - name: List folder
-        run: cd ios && ls
+        run: cd ios && ls -R ./build/
