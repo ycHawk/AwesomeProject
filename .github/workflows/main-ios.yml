@@ -38,8 +38,5 @@ jobs:
       - name: Install Pods
         run: cd ios && pod install --repo-update && cd ..
         
-      - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_12.0.0.app
-        
       - name: Xcode Version
         run: /usr/bin/xcodebuild -version
