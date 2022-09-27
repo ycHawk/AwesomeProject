@@ -40,3 +40,6 @@ jobs:
         
       - name: Xcode Version
         run: /usr/bin/xcodebuild -version
+        
+      - name: React Native run-ios
+        run: npm run ios
