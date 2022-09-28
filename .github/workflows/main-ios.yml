@@ -45,10 +45,7 @@ jobs:
         run: /usr/bin/xcodebuild -version
         
       - name: Xcodebuild build archive
-        run: cd ios && xcodebuild clean archive -scheme AwesomeProject -workspace AwesomeProject.xcworkspace -configuration Release -archivePath ./build/AwesomeProject.xcarchive -destination id=FF9C5FDC-127D-4A5C-A660-9EBD6D8A01D7 && cd ..
-        
-      - name: Xcodebuild export archive
-        run: cd ios && xcodebuild -exportArchive -archivePath ./build/AwesomeProject.xcarchive -exportPath ./build/ -exportOptionsPlist ./AwesomeProject/Info.plist && cd ..
+        run: cd ios && xcodebuild clean archive -scheme AwesomeProject -sdk iphoneos -workspace AwesomeProject.xcworkspace -configuration Release -archivePath ./build/AwesomeProject.xcarchive -destination id=FF9C5FDC-127D-4A5C-A660-9EBD6D8A01D7 && cd ..
         
       - name: List folder
         run: cd ios && ls -R ./build/
