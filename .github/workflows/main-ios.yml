@@ -44,8 +44,11 @@ jobs:
       - name: Xcode Version
         run: /usr/bin/xcodebuild -version
         
-      - name: React Native run-ios
+      - name: Xcodebuild build archive
         run: cd ios && xcodebuild clean archive -scheme AwesomeProject -workspace AwesomeProject.xcworkspace -configuration Release -archivePath ./build/AwesomeProject.xcarchive -destination id=FF9C5FDC-127D-4A5C-A660-9EBD6D8A01D7 && cd ..
+        
+      - name: Xcodebuild export archive
+        run: cd ios && xcodebuild -exportArchive -archivePath ./build/AwesomeProject.xcarchive -exportPath ./build/ -exportOptionsPlist ./AwesomeProject/Info.plist && cd ..
         
       - name: List folder
         run: cd ios && ls -R ./build/
