@@ -1,7 +1,8 @@
 platform :android do 
     desc "Release for the Android beta"
     lane :beta do
-        gradle(task: 'clean')
-        gradle(task: 'assemble', build_type: 'Release')
+        gradle(task: 'clean', project_dir: './')
+        gradle(task: 'bundle', bundle_type: 'Release', project_dir: './')
+        supply(track: 'beta', abb: './andriod/app/build/outputs/apk/app-beta-release.apk')
     end
 end
