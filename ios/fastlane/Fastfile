@@ -1,7 +1,7 @@
 platform :ios do 
     desc "Bundle Release for the ios beta"
     lane :beta do
-        enable_automatic_code_signing(path: "AwesomeProject.xcodeproj")
-        gym(project: "AwesomeProject.xcodeproj", skip_profile_detection: true)
+        update_code_signing_settings(use_automatic_signing: true, path: "AwesomeProject.xcodeproj", team_id: "2PC94S32ZB", bundle_identifier: "com.awesomeproject.2PC94S32ZB", profile_name: "Håkan Lundblad (Personal Team)")
+        gym(project: "AwesomeProject.xcodeproj")
     end
 end
