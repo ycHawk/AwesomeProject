@@ -56,7 +56,7 @@ workflows:
       app_store_connect: codemagic
     environment:
       ios_signing:
-        distribution_type: add_hoc
+        distribution_type: app-hoc
         bundle_identifier: com.awesomeproject
       vars:
         BUNDLE_ID: "com.awesomeproject"
