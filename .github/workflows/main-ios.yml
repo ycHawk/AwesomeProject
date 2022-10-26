@@ -47,12 +47,6 @@ jobs:
       - name: Install Pods
         run: cd ios && pod install --repo-update && cd ..
 
-      # - name: Init Fastlane match
-      #   run: cd ios && fastlane match init && cd ..
-
-      - name: Fastlane match development
-        run: cd ios && fastlane match development --app_identifier "org.yahiro.AwesomeProject" --verbose && cd ..        
-
       - name: Build bundle with Fastlane
         run: |
           cd ios && bundle exec fastlane ios beta --verbose && cd ..
