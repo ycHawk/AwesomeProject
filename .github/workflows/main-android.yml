@@ -50,11 +50,11 @@ jobs:
       # - name: List folder
       #   run: ls -R ./
 
-      # - name: Upload artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: release
-      #     path: android/app/build/outputs/apk/release/app-release.aab
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: android/app/build/outputs/apk/release/app-release.apk
           
       # - name: Download artifact
       #   uses: actions/download-artifact@v3
