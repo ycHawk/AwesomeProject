@@ -47,11 +47,10 @@ jobs:
         
   
       - name: Upload artifact
-        working-directory: ./android
         uses: actions/upload-artifact@v3
         with:
           name: release
-          path: app/build/outputs/apk/release/app-release.aab
+          path: android/app/build/outputs/apk/release/app-release.aab
           
       - name: Download artifact
         uses: actions/download-artifact@v3
