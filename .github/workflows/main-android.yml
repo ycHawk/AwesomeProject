@@ -26,24 +26,27 @@ jobs:
       - name: Install npm dependencies
         run: yarn
         
-      - name: Build Android release
-        run: cd android && ./gradlew assembleRelease
+      - name: Install bundler & Fastlane
+        run: gem install fastlane
+      
+      # - name: Build Android release
+      #  run: cd android && ./gradlew assembleRelease
   
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: release
-          path: android/app/build/outputs/apk/release/app-release.apk
+      # - name: Upload artifact
+      #  uses: actions/upload-artifact@v3
+      #  with:
+      #    name: release
+      #    path: android/app/build/outputs/apk/release/app-release.apk
           
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: release
+      # - name: Download artifact
+      #  uses: actions/download-artifact@v3
+      #  with:
+      #    name: release
           
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_APP_ID_ANDROID}}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          groups: Android1
-          file: app-release.apk
+      # - name: upload artifact to Firebase App Distribution
+      #  uses: wzieba/Firebase-Distribution-Github-Action@v1
+      #  with:
+      #    appId: ${{secrets.FIREBASE_APP_ID_ANDROID}}
+      #    token: ${{secrets.FIREBASE_TOKEN}}
+      #    groups: Android1
+      #    file: app-release.apk
