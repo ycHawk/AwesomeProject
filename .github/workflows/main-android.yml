@@ -50,21 +50,22 @@ jobs:
       - name: List folder
         run: ls -R android/app/build/
 
+      # path: android/app/build/outputs/apk/release/app-release.aab
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: release
-          path: android/app/build/outputs/apk/release/app-release.aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
           
-      # - name: Download artifact
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: release
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: release
           
-      # - name: upload artifact to Firebase App Distribution
-      #   uses: wzieba/Firebase-Distribution-Github-Action@v1
-      #   with:
-      #     appId: ${{secrets.FIREBASE_APP_ID_ANDROID}}
-      #     token: ${{secrets.FIREBASE_TOKEN}}
-      #     groups: Android1
-      #     file: app-release.aab
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID_ANDROID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: Android1
+          file: app-release.aab
