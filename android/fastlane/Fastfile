@@ -1,7 +1,7 @@
 platform :android do 
     desc "Release for the Android beta"
     lane :beta do
-        gradle(task: 'clean', project_dir: './android')
-        gradle(task: 'bundle', build_type: 'Release', project_dir: './android')
+        gradle(task: 'clean', project_dir: './')
+        gradle(task: 'bundle', build_type: 'Release', project_dir: './')
     end
 end

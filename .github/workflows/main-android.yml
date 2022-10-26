@@ -46,7 +46,7 @@ jobs:
           bundle exec fastlane android beta
         
       - name: List folder
-        run: cd android && ls -R ./
+        run: ls -R ./
 
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
