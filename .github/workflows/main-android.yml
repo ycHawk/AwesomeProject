@@ -43,7 +43,7 @@ jobs:
       # - name: Build Android release
       #   run: cd android && ./gradlew assembleRelease
 
-      - name: Build with Fastlane
+      - name: Build bundle with Fastlane
         run: |
           cd android && bundle exec fastlane android beta --verbose
         
