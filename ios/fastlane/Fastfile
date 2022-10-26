@@ -1,3 +1,14 @@
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+            config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+            config.build_settings['DEVELOPMENT_TEAM'] = '2PC94S32ZB'
+        end
+      end
+    end
+end
+
 platform :ios do 
     desc "Bundle Release for the ios beta"
     lane :beta do
