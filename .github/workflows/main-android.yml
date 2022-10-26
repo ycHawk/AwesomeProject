@@ -36,7 +36,10 @@ jobs:
         
       - name: Setup Fastlane
         working-directory: ./
-        run: bundle install
+        run: | 
+          bundle install
+          bundle update fastlane
+      
         
       # - name: Install bundler & Fastlane
       #  run: |
