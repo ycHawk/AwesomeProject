@@ -47,8 +47,8 @@ jobs:
         run: |
           cd android && bundle exec fastlane android beta --verbose
         
-      - name: List folder
-        run: ls -R android/app/build/
+      # - name: List folder
+      #   run: ls -R android/app/build/
 
       # path: android/app/build/outputs/apk/release/app-release.aab
       - name: Upload artifact
