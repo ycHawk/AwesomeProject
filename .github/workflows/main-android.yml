@@ -20,8 +20,6 @@ jobs:
     strategy:
       matrix:
         ruby-version:
-        - '2.5'
-        - '2.6'
         - '2.7'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -35,6 +33,10 @@ jobs:
 
       - name: Install npm dependencies
         run: yarn
+        
+      - name: Setup Fastlane
+        working-directory: ./
+        run: bundle install
         
       # - name: Install bundler & Fastlane
       #  run: |
