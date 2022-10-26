@@ -54,4 +54,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: release
-          path: ./build//AwesomeProject.xcarchive/Products/Applications/AwesomeProject.app
+          path: .ios//build//AwesomeProject.xcarchive/Products/Applications/AwesomeProject.app
