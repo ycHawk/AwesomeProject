@@ -1,7 +1,6 @@
 platform :ios do 
     desc "Bundle Release for the ios beta"
     lane :beta do
-        match(type: "adhoc")
-        gym(export_method: "ad-hoc", project: 'AwesomeProject.xcodeproj')
+        gym(export_method: "development", project: "AwesomeProject.xcodeproj", skip_profile_detection: true)
     end
 end
