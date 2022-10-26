@@ -49,3 +49,9 @@ jobs:
         
       - name: List folder
         run: cd ios && ls -R ./build/
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: ./build//AwesomeProject.xcarchive/Products/Applications/AwesomeProject.app
