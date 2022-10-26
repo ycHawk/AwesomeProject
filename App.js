@@ -9,6 +9,7 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -59,44 +60,31 @@ const App: () => Node = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+      {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
+      /> */}
         <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One-2">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          style={styles.sectionContainer}>
+        <Text style={styles.sectionTitle}>
+          Hello from AwesomeProject!
+        </Text>
+        <Button style={styles.button} title="Click me" />
+        
+        
         </View>
-      </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   sectionContainer: {
+    height: '100%',
     marginTop: 32,
     paddingHorizontal: 24,
   },
@@ -112,6 +100,14 @@ const styles = StyleSheet.create({
   highlight: {
     fontWeight: '700',
   },
+  button: {
+    backgroundColor: 'pink',
+    fontWeight: '700',
+    borderColor: 'gray',
+    borderRadius: 5,
+    borderWidth: 2
+  },
+  
 });
 
 export default App;
