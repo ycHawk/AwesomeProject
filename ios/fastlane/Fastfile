@@ -1,6 +1,7 @@
 platform :ios do 
     desc "Bundle Release for the ios beta"
     lane :beta do
-        gym(export_method: "development", project: "AwesomeProject.xcodeproj", skip_profile_detection: true)
+        enable_automatic_code_signing(path: "AwesomeProject.xcodeproj")
+        gym(project: "AwesomeProject.xcodeproj", skip_profile_detection: true)
     end
 end
