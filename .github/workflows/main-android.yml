@@ -40,12 +40,12 @@ jobs:
           bundle install
           bundle update fastlane
 
-      - name: Build Android release
-        run: cd android && ./gradlew assembleRelease
+      # - name: Build Android release
+      #   run: cd android && ./gradlew assembleRelease
 
-      # - name: Build and upload to TestFlight
-      #   run: |
-      #     cd android && bundle exec fastlane android beta --verbose
+      - name: Build and upload to TestFlight
+        run: |
+          cd android && bundle exec fastlane android beta --verbose
         
       # - name: List folder
       #   run: ls -R ./
