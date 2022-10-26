@@ -41,9 +41,8 @@ jobs:
           bundle update fastlane
           
       - name: Build and upload to TestFlight
-        working-directory: ./android
         run: |
-          bundle exec fastlane android beta
+          cd android && bundle exec fastlane android beta --verbose
         
       - name: List folder
         run: ls -R ./
