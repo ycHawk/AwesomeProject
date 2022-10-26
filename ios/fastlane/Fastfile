@@ -1,8 +1,9 @@
 platform :ios do 
     desc "Bundle Release for the ios beta"
     lane :beta do
-        disable_automatic_code_signing(path: "AwesomeProject.xcodeproj",  team_id: "2PC94S32ZB")
+        update_code_signing_settings(use_automatic_signing: false, path: "AwesomeProject.xcodeproj")
+        disable_automatic_code_signing(path: "AwesomeProject.xcodeproj")
         update_project_team(path: "AwesomeProject.xcodeproj", teamid: "2PC94S32ZB")
-        gym(scheme: 'AwesomeProject', workspace: 'AwesomeProject.xcworkspace', configuration: 'Debug')
+        gym(scheme: 'AwesomeProject', workspace: 'AwesomeProject.xcworkspace', export_method: "ad-hoc", configuration: 'Release')
     end
 end
