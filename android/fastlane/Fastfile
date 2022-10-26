@@ -1,6 +1,6 @@
 platform :android do 
     desc "Bundle Release for the Android beta"
     lane :beta do
-        gradle(task: "bundle",  build_type: "Release")
+        gradle(task: "assemble",  build_type: "Release")
     end
 end

@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: release
-          path: android/app/build/outputs/bundle/release/app-release.aab
+          path: android/app/build/outputs/apk/release/app-release.apk
           
       - name: Download artifact
         uses: actions/download-artifact@v3
@@ -68,4 +68,4 @@ jobs:
           appId: ${{secrets.FIREBASE_APP_ID_ANDROID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: Android1
-          file: app-release.aab
+          file: app-release.apk
