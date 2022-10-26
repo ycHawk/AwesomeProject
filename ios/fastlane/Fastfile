@@ -1,7 +1,7 @@
 platform :ios do 
     desc "Bundle Release for the ios beta"
     lane :beta do
-        update_code_signing_settings(use_automatic_signing: true, path: "AwesomeProject.xcodeproj", team_id: "2PC94S32ZB", bundle_identifier: "com.awesomeproject.2PC94S32ZB")
+        update_code_signing_settings(use_automatic_signing: true, path: "AwesomeProject.xcodeproj", team_id: "2PC94S32ZB", bundle_identifier: "org.yahiro.AwesomeProject")
         gym(project: "AwesomeProject.xcodeproj")
     end
 end
