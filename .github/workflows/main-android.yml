@@ -39,7 +39,10 @@ jobs:
         run: | 
           bundle install
           bundle update fastlane
-      
+          
+      - name: Build and upload to TestFlight
+        run: |
+          bundle exec fastlane android beta
         
       # - name: Install bundler & Fastlane
       #  run: |
