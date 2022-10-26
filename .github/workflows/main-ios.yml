@@ -27,6 +27,12 @@ jobs:
       - name: Ruby version
         run: ruby --version
 
+      - name: Setup Fastlane
+        working-directory: ./
+        run: | 
+          bundle install
+          bundle update fastlane
+
       - name: Restore Pods cache
         uses: actions/cache@v3
         with:
@@ -41,11 +47,15 @@ jobs:
       - name: Install Pods
         run: cd ios && pod install --repo-update && cd ..
         
-      - name: Xcode Version
-        run: /usr/bin/xcodebuild -version
+      - name: Build bundle with Fastlane
+        run: |
+          cd ios && bundle exec fastlane ios beta --verbose && cd ..
+
+      # - name: Xcode Version
+      #   run: /usr/bin/xcodebuild -version
         
-      - name: Xcodebuild build archive
-        run: cd ios && xcodebuild clean archive -scheme AwesomeProject -sdk iphoneos -workspace AwesomeProject.xcworkspace -configuration Release -archivePath ./build/AwesomeProject.xcarchive build CODE_SIGNING_ALLOWED=NO && cd ..
+      # - name: Xcodebuild build archive
+      #   run: cd ios && xcodebuild clean archive -scheme AwesomeProject -sdk iphoneos -workspace AwesomeProject.xcworkspace -configuration Release -archivePath ./build/AwesomeProject.xcarchive build CODE_SIGNING_ALLOWED=NO && cd ..
         
       - name: List folder
         run: cd ios && ls -R ./build/

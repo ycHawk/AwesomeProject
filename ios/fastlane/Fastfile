@@ -1,0 +1,6 @@
+platform :ios do 
+    desc "Bundle Release for the ios beta"
+    lane :beta do
+        gym(scheme: 'AwesomeProject', workspace: 'AwesomeProject.xcworkspace')
+    end
+end
