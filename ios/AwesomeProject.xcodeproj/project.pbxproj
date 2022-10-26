@@ -437,6 +437,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2PC94S32ZB;
 				INFOPLIST_FILE = AwesomeProjectTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
